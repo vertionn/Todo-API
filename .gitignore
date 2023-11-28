@@ -1,0 +1,19 @@
+# Ignore binary files
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Ignore the build/ directory
+build/
+
+# Ignore the vendor/ directory
+vendor/
+
+# Ignore go test cache
+*.test
+
+# Ignore IDE specific files
+.idea/
+.vscode/

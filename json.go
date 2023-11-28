@@ -1,18 +1,20 @@
 /*
-   json.go - JSON Handling Module
 
-   This file provides JSON handling functionalities for encoding and sending
-   JSON responses to clients in a standardized format. It utilizes the 'jsoniter'
-   library, which is compatible with the standard library, for efficient JSON encoding.
+	json.go - JSON Handling Module
 
-   The primary components include:
-   - NewJson: A jsoniter configuration compatible with the standard library.
-   - JsonResponse: Represents the structure of JSON responses sent to the client.
-   - ReturnJSON: Function to encode and send a JSON response with proper content type
-     and HTTP status code. Handles errors during encoding or writing.
+	This file provides JSON handling functionalities for encoding and sending
+	JSON responses to clients in a standardized format. It utilizes the 'jsoniter'
+	library, which is compatible with the standard library, for efficient JSON encoding.
 
-   Author: Nathan
-   Date: 24/11/23
+	The primary components include:
+	- NewJson: A jsoniter configuration compatible with the standard library.
+	- JsonResponse: Represents the structure of JSON responses sent to the client.
+	- ReturnJSON: Function to encode and send a JSON response with proper content type
+	  and HTTP status code. Handles errors during encoding or writing.
+
+	Author: Nathan
+	Date: 24/11/23
+
 */
 
 package main
@@ -44,6 +46,7 @@ type JsonResponse struct {
 // ReturnJSON encodes and sends a JSON response using the 'JsonResponse' structure.
 // It sets the appropriate Content-Type and HTTP status code before encoding and sending the JSON.
 // If there are any errors during the encoding or writing process, an error is returned.
+
 func ReturnJSON(w http.ResponseWriter, statusCode int, response JsonResponse) error {
 	// Set the Content Type
 	w.Header().Set("Content-Type", "application/json")

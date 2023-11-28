@@ -1,19 +1,21 @@
 /*
-   main.go - This is the main file that holds the logic for the Todo API.
 
-   It defines the TodoStruct type representing individual todos, and the main router using the
-   go-chi framework. Endpoints for retrieving, creating, updating, and completing todos are implemented.
-   The application uses an in-memory slice 'Todos' to store todo items.
+	 main.go - This is the main file that holds the logic for the Todo API.
 
-   API Endpoints:
-   - GET /todos: Retrieve all todos or a message if none exist.
-   - POST /create/todo: Create a new todo.
-   - PUT /update/todo/{ID}: Update a todo by ID.
-   - PATCH /complete/{ID}: Mark a todo as complete by ID.
-   - DELETE "/delete/{ID}: Delete a todo a ID
+	 It defines the TodoStruct type representing individual todos, and the main router using the
+	 go-chi framework. Endpoints for retrieving, creating, updating, and completing todos are implemented.
+	 The application uses an in-memory slice 'Todos' to store todo items.
 
-  Author: Nathan
-  Date: 24/11/23
+	 API Endpoints:
+	 - GET /todos: Retrieve all todos or a message if none exist.
+	 - POST /create/todo: Create a new todo.
+	 - PUT /update/todo/{ID}: Update a todo by ID.
+	 - PATCH /complete/{ID}: Mark a todo as complete by ID.
+	 - DELETE "/delete/{ID}: Delete a todo a ID
+
+	Author: Nathan
+	Date: 24/11/23
+
 */
 
 package main
@@ -22,13 +24,13 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
+	"github.com/go-chi/chi/v5"
 	"net/http"
 	"os"
 	"os/signal"
 	"strconv"
 	"time"
 
-	"github.com/go-chi/chi/v5"
 	"github.com/go-chi/chi/v5/middleware"
 )
 
